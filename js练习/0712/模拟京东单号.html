@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            margin-top: 80px;
+        }
+
+        input,
+        p {
+            width: 200px;
+            height: 30px;
+
+        }
+
+        p {
+            display: none;
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 208px;
+            font-size: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <p></p>
+    </div>
+    <script>
+        var ipt = document.querySelector('input');
+        var txt = document.querySelector('p');
+        ipt.addEventListener('keyup', function () {
+            if (this.value == '') {
+                txt.style.display = 'none';
+
+            } else {
+                txt.style.display = 'block';
+                txt.innerHTML = this.value;
+            }
+
+        })
+        ipt.addEventListener('blur', function () {
+            txt.style.display = 'none';
+        })
+        ipt.addEventListener('focus', function () {
+            if (this.value != '') {
+                txt.style.display = 'block';
+            }
+
+        })
+    </script>
+</body>
+
+</html>
